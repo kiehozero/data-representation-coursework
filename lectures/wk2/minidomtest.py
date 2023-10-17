@@ -15,4 +15,3 @@ for empNode in empNodeList:
     firstNameNode = empNode.getElementsByTagName("FirstName").item(0)
     firstName = firstNameNode.firstChild.nodeValue.strip()
     print(firstName)
-
