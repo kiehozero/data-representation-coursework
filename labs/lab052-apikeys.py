@@ -1,10 +1,10 @@
 import requests
 import urllib.parse
-import config
+from config import conkeys as cfg
 
 url = 'https://en.wikipedia.org'
 
-apiKey = config.conkeys['htmltopdf']
+apiKey = cfg['htmltopdf']
 
 api_url = 'https://api.html2pdf.app/v1/generate'
 
