@@ -64,82 +64,34 @@
         }
     },
     {
-        "name": "cso-formatted.json",
-        "path": "cso-formatted.json",
-        "sha": "525591b5951a311bdde3be2a339e57d4a8840811",
-        "size": 13280,
-        "url": "https://api.github.com/repos/kiehozero/data-representation-coursework/contents/cso-formatted.json?ref=main",
-        "html_url": "https://github.com/kiehozero/data-representation-coursework/blob/main/cso-formatted.json",
-        "git_url": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/blobs/525591b5951a311bdde3be2a339e57d4a8840811",
-        "download_url": "https://raw.githubusercontent.com/kiehozero/data-representation-coursework/main/cso-formatted.json",
-        "type": "file",
-        "_links": {
-            "self": "https://api.github.com/repos/kiehozero/data-representation-coursework/contents/cso-formatted.json?ref=main",
-            "git": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/blobs/525591b5951a311bdde3be2a339e57d4a8840811",
-            "html": "https://github.com/kiehozero/data-representation-coursework/blob/main/cso-formatted.json"
-        }
-    },
-    {
-        "name": "cso.json",
-        "path": "cso.json",
-        "sha": "648efe3a3df24984d73d76a356203b613300aeb5",
-        "size": 13873,
-        "url": "https://api.github.com/repos/kiehozero/data-representation-coursework/contents/cso.json?ref=main",
-        "html_url": "https://github.com/kiehozero/data-representation-coursework/blob/main/cso.json",
-        "git_url": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/blobs/648efe3a3df24984d73d76a356203b613300aeb5",
-        "download_url": "https://raw.githubusercontent.com/kiehozero/data-representation-coursework/main/cso.json",
-        "type": "file",
-        "_links": {
-            "self": "https://api.github.com/repos/kiehozero/data-representation-coursework/contents/cso.json?ref=main",
-            "git": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/blobs/648efe3a3df24984d73d76a356203b613300aeb5",
-            "html": "https://github.com/kiehozero/data-representation-coursework/blob/main/cso.json"
-        }
-    },
-    {
-        "name": "csodao.py",
-        "path": "csodao.py",
-        "sha": "800e47bdb90bd6632b5650d9822719817de9b8ac",
-        "size": 2162,
-        "url": "https://api.github.com/repos/kiehozero/data-representation-coursework/contents/csodao.py?ref=main",
-        "html_url": "https://github.com/kiehozero/data-representation-coursework/blob/main/csodao.py",
-        "git_url": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/blobs/800e47bdb90bd6632b5650d9822719817de9b8ac",
-        "download_url": "https://raw.githubusercontent.com/kiehozero/data-representation-coursework/main/csodao.py",
-        "type": "file",
-        "_links": {
-            "self": "https://api.github.com/repos/kiehozero/data-representation-coursework/contents/csodao.py?ref=main",
-            "git": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/blobs/800e47bdb90bd6632b5650d9822719817de9b8ac",
-            "html": "https://github.com/kiehozero/data-representation-coursework/blob/main/csodao.py"
-        }
-    },
-    {
         "name": "labs",
         "path": "labs",
-        "sha": "2e73f7f66cce7d7d4f6e2bb35a214bae3841bc72",
+        "sha": "0463059d26a588c023bac02fc0991689d1a31268",
         "size": 0,
         "url": "https://api.github.com/repos/kiehozero/data-representation-coursework/contents/labs?ref=main",
         "html_url": "https://github.com/kiehozero/data-representation-coursework/tree/main/labs",
-        "git_url": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/trees/2e73f7f66cce7d7d4f6e2bb35a214bae3841bc72",
+        "git_url": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/trees/0463059d26a588c023bac02fc0991689d1a31268",
         "download_url": null,
         "type": "dir",
         "_links": {
             "self": "https://api.github.com/repos/kiehozero/data-representation-coursework/contents/labs?ref=main",
-            "git": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/trees/2e73f7f66cce7d7d4f6e2bb35a214bae3841bc72",
+            "git": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/trees/0463059d26a588c023bac02fc0991689d1a31268",
             "html": "https://github.com/kiehozero/data-representation-coursework/tree/main/labs"
         }
     },
     {
         "name": "lectures",
         "path": "lectures",
-        "sha": "d879787c26b099a61c38654bb87961b3886533f3",
+        "sha": "0ab78ac5767d0587f0a2e3db278d44afab456149",
         "size": 0,
         "url": "https://api.github.com/repos/kiehozero/data-representation-coursework/contents/lectures?ref=main",
         "html_url": "https://github.com/kiehozero/data-representation-coursework/tree/main/lectures",
-        "git_url": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/trees/d879787c26b099a61c38654bb87961b3886533f3",
+        "git_url": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/trees/0ab78ac5767d0587f0a2e3db278d44afab456149",
         "download_url": null,
         "type": "dir",
         "_links": {
             "self": "https://api.github.com/repos/kiehozero/data-representation-coursework/contents/lectures?ref=main",
-            "git": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/trees/d879787c26b099a61c38654bb87961b3886533f3",
+            "git": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/trees/0ab78ac5767d0587f0a2e3db278d44afab456149",
             "html": "https://github.com/kiehozero/data-representation-coursework/tree/main/lectures"
         }
     },
