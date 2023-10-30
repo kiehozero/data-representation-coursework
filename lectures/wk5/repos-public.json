@@ -130,16 +130,16 @@
     {
         "name": "lectures",
         "path": "lectures",
-        "sha": "4724991af5b2fc6eba7639f3c12934d81f3fad66",
+        "sha": "d879787c26b099a61c38654bb87961b3886533f3",
         "size": 0,
         "url": "https://api.github.com/repos/kiehozero/data-representation-coursework/contents/lectures?ref=main",
         "html_url": "https://github.com/kiehozero/data-representation-coursework/tree/main/lectures",
-        "git_url": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/trees/4724991af5b2fc6eba7639f3c12934d81f3fad66",
+        "git_url": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/trees/d879787c26b099a61c38654bb87961b3886533f3",
         "download_url": null,
         "type": "dir",
         "_links": {
             "self": "https://api.github.com/repos/kiehozero/data-representation-coursework/contents/lectures?ref=main",
-            "git": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/trees/4724991af5b2fc6eba7639f3c12934d81f3fad66",
+            "git": "https://api.github.com/repos/kiehozero/data-representation-coursework/git/trees/d879787c26b099a61c38654bb87961b3886533f3",
             "html": "https://github.com/kiehozero/data-representation-coursework/tree/main/lectures"
         }
     },
