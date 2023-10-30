@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<Library>
+    <Book category="Technical">
+        <ISBN>9781098102937</ISBN>
+        <Title>Essential Math for Data Science</Title>
+        <Author>Thomas Nield</Author>
+    </Book>
+    <Book category="Cookery">
+        <ISBN>9780738214504</ISBN>
+        <Title>Veganomicon: The Ultimate Vegan Cookbook</Title>
+        <Author>Isa Chandra Moskowitz and Terry Hope Romero</Author>
+    </Book>
+    <Book category="Technical">
+        <ISBN>9781492088783</ISBN>
+        <Title>SQL for Data Analysis</Title>
+        <Author>Corey Tanimura</Author>
+    </Book>
+    <Book category="Cookery">
+        <ISBN>9780717184101</ISBN>
+        <Title>The Green Cookbook</Title>
+        <Author>Tony Keogh and Aoife Carrigy</Author>
+    </Book>
+</Library>
