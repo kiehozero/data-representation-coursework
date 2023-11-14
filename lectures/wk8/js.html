@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>JS demo</title>
+    </head>
+    <body>
+        <button onclick="sayhello('dave')">click here</button>
+        <div id="message"></div>
+
+        <input id="name" type="text" value="enter name">
+        <div id="output">typed name here</div>
+        <button onclick="clicked()">submit name</button>
+    
+        <script>
+            console.log("hello world")
+            function sayhello(message){
+                console.log("hello ", message)
+                document.getElementById('message').innerText = message
+            }
+            function clicked(){
+                var output = document.getElementById('name').value
+                document.getElementById('output').innerText = output
+            }
+        </script>
+    </body>
+</html>
