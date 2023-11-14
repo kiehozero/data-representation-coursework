@@ -2,7 +2,7 @@ from github import Github
 from config import conkeys
 import requests
 
-# key is configed to time out
+# key is configed to time out on 30/11/2023 and only works with the two Data Representation repos
 ak = conkeys['gh']
 
 gh = Github(ak)
@@ -18,7 +18,7 @@ url_file = file_test.download_url
 # print(url_file)
 
 # Use download URL to make a HTTP request to the file, then output the contents
-response = requests.get(url_file)
+response = requests.get(url_file,timeout=10000)
 file_content = response.text
 # print(file_content)
 
