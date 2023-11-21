@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+    <head>
+        <title>Conditions</title>
+    </head>
+    <body>
+        <input type="number" onchange=checkNum(this)>
+        <br>
+        <div id="output">
+            testfbhgfgdhgadsfsad
+        </div>
+        <script>
+            function checkNum(inputElement){
+                var value = inputElement.value
+                if (value < 10){
+                    document.getElementById("output").innerText = "too low"
+                } else if (value > 10){
+                    document.getElementById("output").innerText = "too high"
+                } else {
+                    document.getElementById("output").innerText = "correct"
+                }
+            }
+        </script>
+    </body>
+</html>

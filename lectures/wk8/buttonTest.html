@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <head>
+        <title>Testing Buttons</title>
+    </head>
+    <body>
+        <div id="div1" style="background-color: red;">
+            <button onclick="showDiv2()">Show Div 2</button>
+        </div>
+        <div id="div2" style="background-color: blue; display: none;">
+            <button onclick="showDiv1()">Show Div 1</button>
+        </div>
+        <script>
+            var book = {}
+            book.title = "The Archaeology of Knowledge"
+            book.author = "Michael Foucault"
+            book.isbn = 2322543215434
+
+            console.log("book is " + JSON.stringify(book))
+
+            function showDiv1(){
+                document.getElementById("div1").style.display = "block";
+                document.getElementById("div2").style.display = "none";
+                console.log("div1 is now visible")
+            }
+            function showDiv2(){
+                document.getElementById("div1").style.display = "none";
+                document.getElementById("div2").style.display = "block";
+                console.log("div2 is now visible")
+            }
+        </script>
+    </body>
+</html>
