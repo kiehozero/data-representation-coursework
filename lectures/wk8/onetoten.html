@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+    <head>
+        <title>One to Ten</title>
+    </head>
+    <body>
+        <div id="output">
+            output
+        </div>
+        <script>
+            for (var i=0; i<10; i++){
+                console.log(i)
+            }
+            var names = ['luke','jose','felipe','valentina','denis','chris','arjun','teodora','maria','mary']
+            var output = ''
+            // use 'of' to iterate through an array, and 'in' to iterate through an object
+            for (name of names){
+                output += name + '<br>'
+            }
+            document.getElementById("output").innerHTML = output
+        </script>
+    </body>
+</html>
