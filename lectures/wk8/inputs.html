@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+    <head>
+        <title>JS demo</title>
+    </head>
+    <body>
+        <div id="myForm">
+            First name: <input type="text" name="firstName"><br>
+            Last name: <input type="text" name="lastName"><br>
+            Age: <input type="text" name="age"><br>
+            <button onclick="doForm()">submit</button>
+        </div>
+
+        <table>
+            <tr>
+                <td>first cell</td>
+                <td>second cell</td>
+                <td>
+                    <button onclick="doRow(this)">do row</button>
+                </td>
+            </tr>
+        </table>
+        <script>
+            function doForm(){
+                var employee = {}
+                var form = document.getElementById("myForm")
+                employee.firstName = form.querySelector("input[name='firstName']").value
+                employee.lastName = form.querySelector("input[name='lastName']").value
+                employee.age = form.querySelector("input[name='age']").value
+                console.log("form data " + JSON.stringify(employee))
+            }
+            function doRow(buttonElement){
+                // returns entire row that contains the button
+                var rowElement = buttonElement.parentNode.parentNode
+                var data = {}
+                data.cell1 = rowElement.cells[0].firstChild.textContent;
+                data.cell2 = rowElement.cells[1].firstChild.textContent;
+                console.log(JSON.stringify(data))
+            }
+        </script>
+    </body>
+</html>
