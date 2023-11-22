@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+    <head>
+        <title>View Books</title>
+        <!-- CSS only -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" crossorigin="anonymous"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi">
+    </head>
+    <body>
+        <div class="div">
+            <table class="table" id="bookTable">
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Price</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+                <td>1</td>
+                <td>Caliban and the Witch</td>
+                <td>Silvia Federici</td>
+                <td>12</td>
+                <td><button id="button-showUpdate" onclick="showUpdate(this)">Update</button></td>
+                <td><button id="button-doDelete" onclick="doDelete(this)">Delete</button></td>
+            </table>
+        </div>
+        <div class="div">
+            <button id="button-showCreate" onclick="showCreate()">Create</button>
+            <button id="showViewAll" onclick="showViewAll()">Show All</button>
+        </div>
+        <h2>
+            <span id="createLabel">Create a Book</span><span id="updateLabel" style="display:none">Update a Book</span>
+        </h2>
+        <div class="div" id="createUpdateForm" style="display:none">
+            <input id="id" type="text" name="id" value="ID"><br>
+            <input id="title" type="text" name="title" value="Title"><br>
+            <input id="author" type="text" name="author" value="Author"><br>
+            <input id="price" type="number" name="price" value="Price"><br>
+            <select id="create">
+                <option value="instock">In Stock</option>
+                <option value="outstock">Out of Stock</option>
+                <option value="other">Out of Print</option>
+            </select>
+            <span><button id="button-doCreate" onclick="doCreate()">Create</button></span>
+            <span><button id="button-doUpdate" onclick="doUpdate()">Update</button></span>
+        </div>
+        <script>
+            function showCreate(){
+                // these items are the same as showUpdate
+                document.getElementById("button-showCreate").style.display="none"
+                document.getElementById("bookTable").style.display="none"
+                document.getElementById("createUpdateForm").style.display="block"
+                // these items are the opposite of showUpdate
+                document.getElementById("createLabel").style.display="inline"
+                document.getElementById("updateLabel").style.display="none"
+                document.getElementById("button-doCreate").style.display="block"
+                document.getElementById("button-doUpdate").style.display="none"
+            }
+
+            function showUpdate(buttonElement){
+                // these items are the same as show showCreate
+                document.getElementById("button-showCreate").style.display="none"
+                document.getElementById("bookTable").style.display="none"
+                document.getElementById("createUpdateForm").style.display="block"
+                // these items are the opposite of showCreate
+                document.getElementById("createLabel").style.display="none"
+                document.getElementById("updateLabel").style.display="inline"
+                document.getElementById("button-doCreate").style.display="none"
+                document.getElementById("button-doUpdate").style.display="block"
+
+                var rowElement = buttonElement.parentNode.parentNode
+                var book = getBookFromRow(rowElement)
+                populateFormWithBook(book)
+            }
+
+            function showViewAll(){
+                document.getElementById("button-showCreate").style.display="block"
+                document.getElementById("showViewAll").style.display="none"
+                document.getElementById("bookTable").style.display="block"
+                document.getElementById("createUpdateForm").style.display="none"
+                document.getElementById("createLabel").style.display="none"
+                document.getElementById("updateLabel").style.display="none"
+                document.getElementById("button-doCreate").style.display="none"
+                document.getElementById("button-doUpdate").style.display="none"
+            }
+
+            function clearForm(){
+                var form = document.getElementById("createUpdateForm")
+
+                form.querySelector("input[name='id']").disabled = false
+                form.querySelector("input[name='id']").value = ''
+                form.querySelector("input[name='author']").value = ''
+                form.querySelector("input[name='title']").value = ''
+                form.querySelector("input[name='price']").value = ''
+            }
+
+            // getBookFromForm, addBookToTable and doCreate are all to add a book
+
+            function getBookFromForm(){
+                // this is the opposite of populateFormWithBook
+                var form = document.getElementById("createUpdateForm")
+
+                var book = {}
+                book.id = form.querySelector("input[name='id']").value
+                book.title = form.querySelector("input[name='title']").value
+                book.author = form.querySelector("input[name='author']").value
+                book.price = form.querySelector("input[name='price']").value
+                console.log(JSON.stringify(book))
+                return book
+            }
+
+            function addBookToTable(book){
+                var tableElement = document.getElementById("bookTable")
+                var rowElement = tableElement.insertRow(-1)
+
+                var cell1 = rowElement.insertCell(0);
+                cell1.innerHTML = book.id
+                var cell2 = rowElement.insertCell(1);
+                cell2.innerHTML = book.title
+                var cell3 = rowElement.insertCell(2);
+                cell3.innerHTML = book.author
+                var cell4 = rowElement.insertCell(3);
+                cell4.innerHTML = book.price
+                var cell5 = rowElement.insertCell(4);
+                cell5.innerHTML = '<button id="button-showUpdate" onclick="showUpdate(this)">Update</button>'
+                var cell6 = rowElement.insertCell(5);
+                cell6.innerHTML = '<button onclick="doDelete(this)">Delete</button>'
+            }
+
+            function doCreate(){
+                book = getBookFromForm()
+                addBookToTable(book)
+                clearForm()
+                console.log(book)
+                showViewAll()
+            }
+
+            // getBookFromRow, populateFormWithBook and doUpdate are all to update a book
+            function getBookFromRow(rowElement){
+                var book = {}
+                book.id = rowElement.cells[0].firstChild.textContent
+                book.title = rowElement.cells[1].firstChild.textContent
+                book.author = rowElement.cells[2].firstChild.textContent
+                book.price = rowElement.cells[3].firstChild.textContent
+                return book
+            }
+
+            function populateFormWithBook(book){
+                // this is the opposite of getBookFromForm
+                var form = document.getElementById("createUpdateForm")
+                form.querySelector("input[name='id']").disabled = true
+                form.querySelector("input[name='id']").value = book.id
+                form.querySelector("input[name='title']").value = book.title
+                form.querySelector("input[name='author']").value = book.author
+                form.querySelector("input[name='price']").value = book.price
+            }
+
+            function setBookInRow(rowElement,book){
+                rowElement.cells[0].firstChild.textContent = book.id
+                rowElement.cells[1].firstChild.textContent = book.title
+                rowElement.cells[2].firstChild.textContent = book.author
+                rowElement.cells[3].firstChild.textContent = book.price
+            }
+
+            function doUpdate(){
+                var book = getBookFromForm();
+                var rowElement = document.getElementById(book.id)
+                setBookInRow(rowElement,book)
+
+                clearForm()
+                showViewAll()
+            }
+            
+        </script>
+    </body>
+</html>
