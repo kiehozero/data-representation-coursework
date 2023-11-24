@@ -4,5 +4,24 @@
     <title>reading a json file</title>
 </head>
 <body>
-    <script></script>
+    <button onclick="readJSON()">hsfdafda</button>
+    <div id="output"></div>
+    <script>
+        function readJSON(){
+            $.ajax({
+                "url":"https://api.coindesk.com/v1/bpi/currentprice.json",
+                "method":"get",
+                "data":"",
+                "dataType":"JSON",
+                "success":function(result){
+                    console.log(result);
+                    var rate = result.bpi.USD.rate;
+                    document.getElementById("output").innerText = rate;
+                },
+                "error": function(xhr,status,rror){
+                    console.log("error: " + status + " msg: "+ error);
+                }
+            })
+        }
+    </script>
 </body>
