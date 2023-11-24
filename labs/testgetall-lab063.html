@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<head>
+    <!-- jQuery minified cpde URL -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <title>Lab 6.3 CRUD Operations Using AJAX, JSON and jQuery</title>
+</head>
+<body>
+    <button onclick="getBooks(processBooks)">hsfdafda</button>
+    <button onclick="createBook(book, processCreateResponse)">create book</button>
+    <div id="output"></div>
+    <script>
+
+        // function and callback for GET operations
+        function getBooks(callback){
+            $.ajax({
+                "url":"https://andrewbeatty1.pythonanywhere.com/books",
+                "method":"GET",
+                "data":"",
+                "dataType":"JSON",
+                "success": function(result){
+                    callback(result)
+                },
+                "error": function(xhr, status, error){
+                    console.log("error: " + status + " msg: " + error);
+                }
+            });
+        }
+
+        function processBooks(result){
+            console.log("in process")
+            console.log(result)
+        }
+
+        // function a callback for POST operations
+        function createBook(book, callback){
+            $.ajax({
+                "url":"https://andrewbeatty1.pythonanywhere.com/books",
+                "method":"POST",
+                "data":JSON.stringify(book),
+                "dataType":"JSON",
+                contentType:"application/json; charset=utf-0",
+                "success": function(result){
+                    // console.log(result);
+                    callback(result)
+
+                },
+                "error": function(xhr, status, error){
+                    console.log("error: " + status + " msg: " + error);
+                }
+            });
+        }
+
+        function processCreateResponse(result){
+            console.log(result)
+        }
+
+        book = {"Title":"Stella Maris","Author":"Cormac McCarthy","Price":"13.49"}
+        
+        // function and callback for UPDATE operations
+        function createBook(book, callback){
+            $.ajax({
+                "url":"https://andrewbeatty1.pythonanywhere.com/books",
+                "method":"POST",
+                "data":JSON.stringify(book),
+                "dataType":"JSON",
+                contentType:"application/json; charset=utf-0",
+                "success": function(result){
+                    // console.log(result);
+                    callback(result)
+
+                },
+                "error": function(xhr, status, error){
+                    console.log("error: " + status + " msg: " + error);
+                }
+            });
+        }
+
+        function processCreateResponse(result){
+            console.log(result)
+        }
+
+        // function and callback for DELETE operations
+    </script>
+</body>

@@ -7,19 +7,21 @@
     <button onclick="readJSON()">hsfdafda</button>
     <div id="output"></div>
     <script>
+        // a function to print the conversion rate if the request is successful, this is a pretty
+        // fundamental example of how to get started using AJAX and APIs
         function readJSON(){
             $.ajax({
                 "url":"https://api.coindesk.com/v1/bpi/currentprice.json",
-                "method":"get",
+                "method":"GET",
                 "data":"",
                 "dataType":"JSON",
-                "success":function(result){
+                "success": function(result){
                     console.log(result);
                     var rate = result.bpi.USD.rate;
                     document.getElementById("output").innerText = rate;
                 },
-                "error": function(xhr,status,rror){
-                    console.log("error: " + status + " msg: "+ error);
+                "error": function(xhr, status, error){
+                    console.log("error: " + status + " msg: " + error);
                 }
             })
         }
