@@ -36,7 +36,7 @@ def find_by_id(id):
     """Return a book."""
     found_books = list(filter(lambda t: t["id"] == id, books))
     if len(found_books) == 0:
-        # added a status code here just as a reminder thant you can do it
+        # added a status code here just as a reminder that you can do it.
         return jsonify({}), 204
     return jsonify({found_books[0]})
 
@@ -67,14 +67,33 @@ def create_book():
 @app.route('/books/<int:id>', methods=['PUT'])
 def update_book(id):
     """PUTs a book via JSON. This can be tested using the method described
-    in the create_book route. """
-    return "served by update_book " + str(id)
+    in the create_book route. This recycles code from find_by_id, and can be
+    tested in the same manner as that function too."""
+    found_books = list(filter(lambda t: t["id"] == id, books))
+    if len(found_books) == 0:
+        # added a status code here just as a reminder that you can do it.
+        return jsonify({}), 404
+    current_book = found_books[0]
+
+    if 'title' in request.json:
+        current_book['title'] = request.json['title']
+    if 'author' in request.json:
+        current_book['author'] = request.json['author']
+    if 'title' in request.json:
+        current_book['price'] = request.json['price']
+
+    return jsonify(current_book)
 
 
 @app.route('/books/<int:id>', methods=['DELETE'])
 def delete_book(id):
     """DELETEs a book using a given ID."""
-    return "served by delete_book " + str(id)
+    found_books = list(filter(lambda t: t["id"] == id, books))
+    if len(found_books) == 0:
+        # added a status code here just as a reminder that you can do it.
+        return jsonify({}), 404
+    books.remove(found_books[0])
+    return jsonify({"done": True})
 
 
 if __name__ == '__main__':
