@@ -60,7 +60,9 @@ def in_json():
         "price": request.json["price"]
     }
     print(book)
-    # this function works only in Postman right now
+    # this function works only in Postman right now, to see the corrected
+    # version, look at the create_book function in the rest_server.py file
+    # in the REST-example folder.
     return jsonify(book)
 
 
