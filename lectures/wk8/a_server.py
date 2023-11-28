@@ -3,7 +3,7 @@ A basic Flask setup. Run this file as a normal Python file, then use the IP
 address 127.0.0.1 in the browser to display. Alternatively, use the command
 FLASK_APP=a_server (or whatever the filename is), then the command 'flask run'.
 """
-from flask import Flask, url_for, redirect
+from flask import Flask, url_for, redirect, request, jsonify
 
 app = Flask(__name__, static_url_path='', static_folder='static')
 
@@ -38,6 +38,30 @@ def id_user(userid):
 def invalid():
     """Using redirections for basic error handling."""
     return redirect(url_for('index'))
+
+
+@app.route('/datainquery', methods=['GET'])
+def in_query():
+    """Using request to return data from query arguments. In this case the URL
+    would be http://127.0.0.1:5000/datainquery?first_name=Stuart&age=36"""
+    query_args = {
+        "first_name": request.args["first_name"],
+        "age": request.args["age"]
+    }
+    return jsonify(query_args)
+
+
+@app.route('/data_json', methods=['GET'])
+def in_json():
+    """Using JSON data."""
+    book = {
+        "title": request.json["title"],
+        "author": request.json["author"],
+        "price": request.json["price"]
+    }
+    print(book)
+    # this function works only in Postman right now
+    return jsonify(book)
 
 
 if __name__ == '__main__':
