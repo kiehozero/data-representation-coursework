@@ -1,4 +1,4 @@
-"""Using a class to create re-usable functions. Note that 
+"""Using a class to create re-usable functions. Note that
 the cursor and DB are closed after each operation"""
 import pymysql
 

@@ -19,4 +19,3 @@ for x in result:
 
 db.close()
 cursor.close()
-
