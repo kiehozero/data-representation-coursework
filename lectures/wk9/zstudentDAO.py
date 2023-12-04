@@ -1,4 +1,7 @@
+"""Using a class to create re-usable functions. Note that 
+the cursor and DB are closed after each operation"""
 import pymysql
+
 
 class StudentDAO:
     host = ""
@@ -9,17 +12,14 @@ class StudentDAO:
     connection = ""
     cursor = ""
 
-    def __init__(self): 
+    def __init__(self):
         # these should be read from a config file
         self.host = "localhost"
         self.user = "root"
-        self.password= ""
+        self.password = ""
         self.database = "test_datarep"
-        # self.user = "datarep",  # this is the user name on my mac
-        # self.passwd = "password" # for my mac
-        
-    
-    def getCursor(self): 
+
+    def getCursor(self):
         self.connection = pymysql.connect(
             host=self.host,
             user=self.user,
@@ -28,13 +28,14 @@ class StudentDAO:
         )
         self.cursor = self.connection.cursor()
         return self.cursor
+
     def closeAll(self):
         self.connection.close()
         self.cursor.close()
- 
+
     def create(self, values):
         cursor = self.getCursor()
-        sql="insert into student (name, age) values (%s,%s)"
+        sql = "INSERT INTO student (name, age) VALUES (%s,%s);"
         cursor.execute(sql, values)
 
         self.connection.commit()
@@ -44,7 +45,7 @@ class StudentDAO:
 
     def getAll(self):
         cursor = self.getCursor()
-        sql="select * from student"
+        sql = "SELECT * FROM student;"
         cursor.execute(sql)
         result = cursor.fetchall()
         self.closeAll()
@@ -52,7 +53,7 @@ class StudentDAO:
 
     def findByID(self, id):
         cursor = self.getCursor()
-        sql="select * from student where id = %s"
+        sql = "SELECT * FROM student WHERE id = %s;"
         values = (id,)
 
         cursor.execute(sql, values)
@@ -62,14 +63,14 @@ class StudentDAO:
 
     def update(self, values):
         cursor = self.getCursor()
-        sql="update student set name= %s, age=%s  where id = %s"
+        sql = "UPDATE student SET name= %s, age=%s WHERE id = %s;"
         cursor.execute(sql, values)
         self.connection.commit()
         self.closeAll()
 
     def delete(self, id):
         cursor = self.getCursor()
-        sql="delete from student where id = %s"
+        sql = "DELETE FROM student WHERE id = %s;"
         values = (id,)
 
         cursor.execute(sql, values)
@@ -77,5 +78,6 @@ class StudentDAO:
         self.connection.commit()
         self.closeAll
         # print("delete done")
+
 
 studentDAO = StudentDAO()

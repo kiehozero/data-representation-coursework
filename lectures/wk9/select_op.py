@@ -1,4 +1,4 @@
-"""Lecture material to return data."""
+"""Lecture material to read a row."""
 import pymysql
 
 db = pymysql.connect(

@@ -1,4 +1,4 @@
-"""Lecture material on INSERT operation."""
+"""Lecture material to insert a row."""
 import pymysql
 
 db = pymysql.connect(

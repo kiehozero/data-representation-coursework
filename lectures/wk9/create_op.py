@@ -9,7 +9,9 @@ db = pymysql.connect(
 )
 
 cursor = db.cursor()
-sql_table = "CREATE TABLE student (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(250), age INT)"
+sql_table = """CREATE TABLE student (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(250), age INT)"""
 
 cursor.execute(sql_table)
 

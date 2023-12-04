@@ -1,3 +1,4 @@
+"""Lecture material to update a row."""
 import pymysql
 
 db = pymysql.connect(
