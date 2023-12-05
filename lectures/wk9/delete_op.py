@@ -1,5 +1,4 @@
 """Lecture material to delete a row."""
-
 import pymysql
 
 db = pymysql.connect(

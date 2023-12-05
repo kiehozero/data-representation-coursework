@@ -1,8 +1,7 @@
 """Lecture notes on connecting to SQL with Python."""
-import mysql.connector
+import pymysql
 
-
-db = mysql.connector.connect(
+db = pymysql.connect(
     host="localhost",
     user="root",
     password="" #,

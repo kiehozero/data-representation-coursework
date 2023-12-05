@@ -9,7 +9,7 @@ db = pymysql.connect(
 )
 
 cursor = db.cursor()
-sql_update = "update student set name= %s, age=%s  where id = %s"
+sql_update = "update student set name= %s, age=%s where id = %s"
 values = ("Joe", 33, 1)
 
 cursor.execute(sql_update, values)

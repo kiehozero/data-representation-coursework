@@ -4,13 +4,13 @@ import pymysql
 db = pymysql.connect(
     host="localhost",
     user="root",
-    password="",
+    password="root123",
     database="test_datarep"
 )
 
 cursor = db.cursor()
-sql_insert = "INSERT INTO student (name, age) VALUES (%s,%s)"
-values = ("Mary", 21)
+sql_insert = "INSERT INTO student (name, age, course) VALUES (%s,%s,%s)"
+values = ("Mary", 21, "Anthropology")
 
 cursor.execute(sql_insert, values)
 
