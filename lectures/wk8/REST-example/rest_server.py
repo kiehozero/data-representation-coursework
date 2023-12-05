@@ -4,6 +4,8 @@ address 127.0.0.1 in the browser to display. Alternatively, use the command
 FLASK_APP=a_server (or whatever the filename is), then the command 'flask run'.
 """
 from flask import abort, Flask, jsonify, request
+from zstudentDAO import StudentDAO
+import pymysql
 
 # redirect, url_for
 
@@ -23,6 +25,12 @@ nextId = 4
 def index():
     """Function for default URL, returns link from another function."""
     return "hello"
+
+
+@app.route('/students')
+def get_students():
+    """Week 9 label exercise. Not currently working."""
+    print(StudentDAO.getAll())
 
 
 @app.route('/books')
