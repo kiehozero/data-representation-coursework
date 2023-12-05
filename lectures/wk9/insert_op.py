@@ -1,12 +1,12 @@
 """Lecture material to insert a row."""
 import pymysql
-import configdb
+import config
 
 db = pymysql.connect(
     host="localhost",
-    user="root",
-    password=configdb.conkeys["pw"],
-    database=configdb.conkeys["db"]
+    user=config.conkeys["user"],
+    password=config.conkeys["pw"],
+    database=config.conkeys["db"]
 )
 
 cursor = db.cursor()

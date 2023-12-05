@@ -1,12 +1,12 @@
 """Lecture notes on connecting to SQL with Python."""
 import pymysql
-import configdb
+import config
 
 db = pymysql.connect(
     host="localhost",
-    user=configdb.conkeys["user"],
-    password=configdb.conkeys["pw"],
-    database=configdb.conkeys["db"]
+    user=config.conkeys["user"],
+    password=config.conkeys["pw"],
+    database=config.conkeys["db"]
 )
 
 cursor = db.cursor()

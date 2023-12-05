@@ -162,4 +162,5 @@ cython_debug/
 # HTML2PDF.app API key
 config.py
 labs/config.py
+lectures/wk9/config.py
 assignments/config.py
