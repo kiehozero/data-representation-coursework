@@ -1,11 +1,12 @@
 """Lecture material to create a table."""
 import pymysql
+import configdb
 
 db = pymysql.connect(
     host="localhost",
-    user="root",
-    password="",
-    database="test_datarep"
+    user=configdb.conkeys["user"],
+    password=configdb.conkeys["pw"],
+    database=configdb.conkeys["db"]
 )
 
 cursor = db.cursor()

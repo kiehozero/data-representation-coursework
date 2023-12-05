@@ -1,6 +1,7 @@
 """Using a class to create re-usable functions. Note that
 the cursor and DB are closed after each operation"""
 import pymysql
+import configdb
 
 
 class StudentDAO:
@@ -8,16 +9,15 @@ class StudentDAO:
     user = ""
     password = ""
     database = ""
-
     connection = ""
     cursor = ""
 
     def __init__(self):
         # these should be read from a config file
         self.host = "localhost"
-        self.user = "root"
-        self.password = ""
-        self.database = "test_datarep"
+        self.user = configdb.conkeys["user"]
+        self.password = configdb.conkeys["pw"]
+        self.database = configdb.conkeys["db"]
 
     def getCursor(self):
         self.connection = pymysql.connect(
@@ -26,7 +26,7 @@ class StudentDAO:
             password=self.password,
             database=self.database
         )
-        self.cursor = self.connection.cursor()
+        self.cursor = self.cursor()
         return self.cursor
 
     def closeAll(self):
