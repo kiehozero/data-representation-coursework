@@ -5,9 +5,6 @@ FLASK_APP=a_server (or whatever the filename is), then the command 'flask run'.
 """
 from flask import abort, Flask, jsonify, request
 from zstudentDAO import StudentDAO
-import pymysql
-
-# redirect, url_for
 
 app = Flask(__name__, static_url_path='', static_folder='static')
 
