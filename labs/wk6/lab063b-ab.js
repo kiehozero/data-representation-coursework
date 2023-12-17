@@ -23,7 +23,7 @@ function createBook(book, callback){
         "data":JSON.stringify(book),
         "dataType": "JSON", contentType: "application/json; charset=utf-8",
         "success":function(result){
-            //console.log(result);
+            // console.log(result);
             callback(result)  
         },
         "error":function(xhr,status,error){
