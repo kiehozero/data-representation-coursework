@@ -11,9 +11,9 @@ param_dict = {
     "Format": "json",
     "CategorySelected": "OFFICE",
     "LocalAuthority": "WICKLOW COUNTY COUNCIL",
-    "Fields":"LocalAuthority,Category,Level,AreaPerFloor,NavTotal,CarPark,PropertyNumber,IG,Use,FloorUse,Address,PublicationDate"
-
+    "Fields": "LocalAuthority,Category,Level,AreaPerFloor,NavTotal,CarPark,PropertyNumber,IG,Use,FloorUse,Address,PublicationDate"
 }
+
 
 def getAll():
     parameters = urllib.parse.urlencode(param_dict)
@@ -23,6 +23,7 @@ def getAll():
     response = requests.get(full_url)
 
     return response.json()
+
 
 if __name__ == "__main__":
     with open("val_office.json", "wt") as fp:
