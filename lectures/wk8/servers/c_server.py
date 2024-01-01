@@ -2,30 +2,35 @@ from flask import Flask, request, jsonify
 
 app = Flask(__name__)
 
+
 @app.route('/')
 def index():
-        return "Hello Mamm\zdf\sdfy"
+    return "Hello Mammzdfsdfy"
 
+
+# providing data from a URL query string (as arguments)
 @app.route('/datainquery', methods=['GET'])
 def inquery():
     queryargs = {
-        "firstname" : request.args["firstname"],
-        "age"   : request.args["age"]
+        "firstname": request.args["firstname"],
+        "age": request.args["age"]
     }
-    print (queryargs)
+    print(queryargs)
     return jsonify(queryargs)
 
+
+# providing data using a JSON file
 @app.route('/dataasjson', methods=['POST'])
 def asjson():
     book = {
-        "title" : request.json["title"],
-        "author" : request.json["author"],
-        "price" : request.json["price"],
-        
+        "title": request.json["title"],
+        "author": request.json["author"],
+        "price": request.json["price"]
     }
-    # put into a database
-    print (book)
+    # you'd add some pymysql functions here to add the data to the DB
+    print(book)
     return jsonify(book)
 
+
 if __name__ == "__main__":
-    app.run(debug = True)
+    app.run(debug=True)

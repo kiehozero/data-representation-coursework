@@ -11,19 +11,18 @@
         // fundamental example of how to get started using AJAX and APIs
         function readJSON(){
             $.ajax({
-                "url":"https://api.coindesk.com/v1/bpi/currentprice.json",
+                "url":"https://api-web.nhle.com/v1/player/8482201/landing",
                 "method":"GET",
                 "data":"",
                 "dataType":"JSON",
                 "success": function(result) {
                     console.log(result);
-                    var rate = result.bpi.USD.rate;
-                    document.getElementById("output").innerText = rate;
+                    document.getElementById("output").innerText = result;
                 },
                 "error": function(xhr, status, error){
                     console.log("error: " + status + " msg: " + error);
                 }
-            })
-        }
+            });
+        };
     </script>
 </body>

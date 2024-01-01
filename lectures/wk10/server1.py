@@ -26,6 +26,8 @@ def findById(id):
 
 """ curl -i -H "Content-Type:application/json" -X POST -d "{\"title\":\"hello\
 ",\"author\":\"someone\",\"price\":123}" http://127.0.0.1:5000/books"""
+
+
 @app.route('/books', methods=['POST'])
 def create():
 
@@ -45,6 +47,8 @@ def create():
 
 """ curl -i -H "Content-Type:application/json" -X PUT -d "{\"title\":\"hello\"
 ,\"author\":\"someone\",\"price\":123}" http://127.0.0.1:5000/books/1"""
+
+
 @app.route('/books/<int:id>', methods=['PUT'])
 def update(id):
     foundBook = bookDAO.findByID(id)
